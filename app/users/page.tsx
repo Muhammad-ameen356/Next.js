@@ -7,7 +7,6 @@ interface Props {
 }
 
 const UserPage = ({ searchParams: { sortOrder } }: Props) => {
-  console.log(sortOrder);
   return (
     <>
       <h1>User Page</h1>

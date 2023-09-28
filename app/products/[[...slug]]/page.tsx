@@ -6,7 +6,6 @@ interface Prop {
 }
 
 const SlugPage = ({ params: { slug }, searchParams }: Prop) => {
-  console.log(searchParams.pageSize, "pageSize");
   return (
     <div>
       page{slug}, {searchParams.pageSize}
