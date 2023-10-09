@@ -15,8 +15,6 @@ const UploadPage = () => {
       <CldUploadWidget
         uploadPreset="lgkkzosx"
         onUpload={(result) => {
-          console.log(result);
-
           if (result.event !== "success") return;
           const info = result.info as CloudinaryResult;
           return setImgId(info.public_id);

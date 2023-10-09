@@ -1,10 +1,12 @@
-import Image from "next/image";
+import { getServerSession } from "next-auth";
 import Link from "next/link";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
-export default function Home() {
+export default async function Home() {
+  const sessionData = await getServerSession(authOptions);
   return (
     <>
-      <h1>Hello World</h1>
+      <h1>Hello {sessionData && <span>{sessionData.user!.name}</span>}</h1>
       <Link href="/users">GO to User </Link>
     </>
   );
